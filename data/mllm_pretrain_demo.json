@@ -1,0 +1,65 @@
+[
+  {
+    "messages": [
+      {
+        "content": "",
+        "role": "user"
+      },
+      {
+        "content": "<|image|>They're Kane and Gretzka from Bayern Munich.",
+        "role": "assistant"
+      }
+    ],
+    "images": [
+      "mllm_demo_data/1.jpg"
+    ]
+  },
+  {
+    "messages": [
+      {
+        "content": "",
+        "role": "user"
+      },
+      {
+        "content": "<|image|>They're Kane and Gretzka from Bayern Munich.",
+        "role": "assistant"
+      }
+    ],
+    "images": [
+      "mllm_demo_data/1.jpg"
+    ],
+    "videos": []
+  },
+  {
+    "messages": [
+      {
+        "content": "",
+        "role": "user"
+      },
+      {
+        "content": "<|image|>They're Kane and Gretzka from Bayern Munich.",
+        "role": "assistant"
+      }
+    ],
+    "images": [
+      "mllm_demo_data/1.jpg"
+    ],
+    "videos": []
+  },
+  {
+    "messages": [
+      {
+        "content": "",
+        "role": "user"
+      },
+      {
+        "content": "<|image|>They're Kane and Gretzka from Bayern Munich.",
+        "role": "assistant"
+      }
+    ],
+    "images": [
+      "mllm_demo_data/3.jpg"
+    ],
+    "videos": []
+  }
+]

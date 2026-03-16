@@ -1,0 +1,103 @@
+### model
+model_name_or_path: models/Llama-3.2-11B-Vision-Instruct
+
+### method
+stage: sft  # we use `sft mode` to execute both pretrain and sft
+do_train: true
+finetuning_type: full
+deepspeed: examples/deepspeed/ds_z2_config.json
+
+# dataset
+# dataset: debug_video_frame
+dataset: mllm_pretrain_demo
+disable_train_shuffling: true  # if set true, dataset will be loaded sequentially
+calculate_length: false
+
+##streaming process
+# buffer_size: 128
+# preprocessing_batch_size: 128
+# streaming: true
+# accelerator_config:
+#   dispatch_batches: false
+
+template: mllama_pretrain
+cutoff_len: 4096
+# max_samples: 1000
+overwrite_cache: false
+preprocessing_num_workers: 128
+# preprocessing_batch_size: 1000  # default value
+
+### output
+output_dir: saves/streaming_video_pretrain_1_stage/pretrain_stage_1_mllm_pretrain_data_15M_V1_5_cv2_prefetch
+logging_steps: 1
+save_steps: 800000
+# max_steps: 50000000
+plot_loss: true
+
+# Use this to continue training if output_dir points to a checkpoint directory
+overwrite_output_dir: false
+# total checkpoint to be saved
+save_total_limit: 16
+
+### train 
+per_device_train_batch_size: 1
+gradient_accumulation_steps: 1
+learning_rate: 2.0e-5
+num_train_epochs: 1
+lr_scheduler_type: cosine
+warmup_ratio: 0.1
+bf16: true
+flash_attn: auto
+# flash_attn: fa2
+# flash_attn: sdpa
+# flash_attn: disabled
+# gradient_checkpointing: true
+ddp_timeout: 1800000000
+
+### eval
+# val_size: 0.1
+# per_device_eval_batch_size: 1
+# eval_strategy: steps
+# eval_steps: 500
+
+# video sample strategy
+video_fps: 2.0
+video_minlen: 8
+video_maxlen: 64
+
+# args for mllama's new vision encoder with full-attn
+mllama_num_tiles: 1
+mllama_use_full_attn: true
+mllama_add_video_position_encoding: true
+
+# vision model, vision projector, language_model
+# - vision projector is default trainable
+# Stage 1: trainable, trainable, freezon, so: (false, true)
+freeze_vision_tower: false
+freeze_language_model: true
+
+# average, max, bilinear, channelFusion
+mllama_pool_mode: average
+mllama_pool_stride: 4
+
+# Whether or not add <image> in text inputs for mllama
+add_image_token_in_input_ids: True
+
+# used for checkpointing, because our enbedding_matrix is set not required_grad
+use_reentrant_gc: false
+
+# log_level: detail
+# run_name: wandb_test
+
+# enable tensorboard
+# logging_dir: logging/pretrain_xx_xx_xx_xx_xx
+logging_dir: logging/mllm_pretrain_demo
+report_to: none
+
+## data prefetch
+# dataloader_prefetch_factor: 2
+# dataloader_num_workers: 2
+
+## using cv2
+frame_extract_num_threads: 1
+extract_frame_func: cv2

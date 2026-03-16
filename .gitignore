@@ -1,0 +1,10 @@
+models
+__pycache__/
+*.py[cod]
+*$py.class
+saves/
+logging/
+*.egg-info/
+src/*.egg-info/
+upload_hf_models.sh
+upload_modelscope_models.sh
