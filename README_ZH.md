@@ -301,7 +301,7 @@ FORCE_TORCHRUN=1 llamafactory-cli train train_config/mllm_pretrain_1node.yaml
   title         = {{MOSS-Video-Preview: Next-Generation Real-Time Video Understanding}},
   author        = {OpenMOSS Team},
   year          = {2026},
-  howpublished  = {\url{https://github.com/fnlp-vision/MOSS-Video-Preview}},
+  howpublished  = {\url{https://github.com/OpenMOSS/MOSS-Video-Preview}},
   note          = {GitHub repository}
 }
 ```
@@ -314,7 +314,6 @@ FORCE_TORCHRUN=1 llamafactory-cli train train_config/mllm_pretrain_1node.yaml
 
 ## 致谢
 我们向 [LlamaFactory](https://github.com/hiyouga/LLaMA-Factory)、[Transformers](https://github.com/huggingface/transformers) 的贡献者以及 OpenMOSS 社区的宝贵支持表示感谢。
-
 
 ## Star History
 

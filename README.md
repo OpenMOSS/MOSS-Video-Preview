@@ -298,7 +298,7 @@ You can choose different configuration files from the `train_config` directory b
   title         = {{MOSS-Video-Preview: Next-Generation Real-Time Video Understanding}},
   author        = {OpenMOSS Team},
   year          = {2026},
-  howpublished  = {\url{https://github.com/fnlp-vision/MOSS-Video-Preview}},
+  howpublished  = {\url{https://github.com/OpenMOSS/MOSS-Video-Preview}},
   note          = {GitHub repository}
 }
 ```
