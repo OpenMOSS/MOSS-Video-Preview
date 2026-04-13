@@ -12,6 +12,8 @@
     <a href="#"><img src="https://img.shields.io/badge/AI%20Studio-Available%20soon-blue" alt="AI Studio"></a>
     <a href="#"><img src="https://img.shields.io/badge/Python-3.12+-orange" alt="version"></a>
     <a href="#"><img src="https://img.shields.io/badge/Arxiv-Available%20soon-red?logo=arxiv&amp"></a>
+    <a href="https://github.com/OpenMOSS/MOSS-VL/blob/main/assets/wechat.jpg"><img src="https://img.shields.io/badge/Wechat-Join-green?logo=wechat&amp"></a>
+
     <a href="./LICENSE"><img src="https://img.shields.io/badge/License-Apache%202.0-blue.svg" alt="license"></a>
 </div>
 
@@ -142,22 +144,19 @@ MOSS-Video-Preview 采用**三阶段渐进式训练策略**，通过从模态对
 
 ## 📊 评测结果
 
-| 类别 | 基准测试 | **Our Model** | Llama 3.2 (Base) | Qwen 2.5-VL (32B) | Qwen 2.5-VL (7B) | LLaVA-OV (7B) |
-| :--- | :--- | :---: | :---: | :---: | :---: | :---: |
-| **Video Logic** | **Video-Holmes** | **39.9** 🚀 | - | 38.4 | 33.0 | 33.0 |
-| **General Video** | **VideoMME** | **62.4** | 46.0 | 70.5 | 65.1 | 58.2 |
-| **Spatial Reasoning**| **VSI-Bench** | **31.7** | 20.6 | - | 34.2 | - |
-| **Long Video** | **LongVideoBench** | **54.2** | 45.5 | - | 56.0 | 56.3 |
-| **Video MCQ** | **MVBench** | **55.8** | - | - | 62.8 | 56.7 |
-| **Core Image** | **MMMU (Val)** | **48.6** | 48.0 | 70.0 | 58.6 | 48.8 |
-| **Core Image** | **MMBench (EN)** | **77.3** | 72.8 | - | 82.6 | 80.8 |
-| **Image OCR** | **OCRBench** | **714** | - | - | 845 | - |
-| **Real World** | **RealWorldQA** | **63.1** | - | - | 68.4 | 66.3 |
+<div align="center">
+  <img src="assets/benchmark.png" alt="MOSS-Video-Preview 与各基线模型的评测结果对比" width="95%" />
+</div>
 
-MOSS-Video-Preview 在各种视频和图像基准测试中表现出卓越的性能，特别是在复杂的视频推理和长视频场景中：
-- **卓越的视频逻辑**：我们的模型在 **Video-Holmes** 上达到了 **39.9**，显著优于 Qwen 2.5-VL (32B) 和其他 7B 级模型，突显了其先进的逻辑推理能力。
-- **强大的视频感知**：在 **VideoMME** 上获得 **62.4** 分，在 **LongVideoBench** 上获得 **54.2** 分，证明了其在处理通用和长时时间依赖方面的有效性。
-- **均衡的多模态基础**：虽然针对视频进行了优化，但它保持了强大的图像理解能力（例如，在 **MMBench EN** 上获得 **77.3** 分），确保了针对各种任务的多功能基础。
+- **Realtime 版本性能的“无损”保持**： 
+实验数据表明，**MOSS-Video-Preview-Realtime-SFT** 实现了几乎“无损”的性能保持。在 MMBench、AI2D 以及大部分视频指标上，其表现与标准 SFT 版本高度一致，甚至在部分时序理解任务（如 TempCompass）中表现更优。这验证了该模型在实际落地场景中，能够兼顾实时响应需求与极高的感知精度。
+
+- **视觉逻辑推理能力**：
+在 **Multimodal Reasoning** 类别中，MOSS 系列展现了稳健的逻辑推导性能。特别是在 **VisuLogic** 榜单上，MOSS 的两个版本（28.60 / 28.70）均优于 LLaVA-OneVision (27.00) 和 Qwen2.5-VL (25.90)。这反映出模型在处理具有逻辑挑战的视觉规律、空间推理等任务时，具备更强的稳定性。
+
+- **细粒度视频细节洞察**：
+在视频理解维度，MOSS 系列在处理细粒度动作逻辑和时空感知上具有显著竞争力。在 **Video-Holmes** 基准测试中，MOSS 系列取得了 **39.30 / 39.50** 的高分，**Qwen2.5-VL** 为 **33.00**；评测结果显示，MOSS 在捕捉视频长序列中的细微动作和复杂时空变化方面，相比同量级开源模型具备更深层的感知能力。
+
 
 MOSS-Video-Preview 的核心优化在于兼顾高质量推理与低延迟的实时流式处理；下方的速度对比将进一步说明这一点。
 

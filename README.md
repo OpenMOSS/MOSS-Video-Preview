@@ -12,6 +12,7 @@
     <a href="#"><img src="https://img.shields.io/badge/AI%20Studio-Available%20soon-blue" alt="AI Studio"></a>
     <a href="#"><img src="https://img.shields.io/badge/Python-3.12+-orange" alt="version"></a>
     <a href="#"><img src="https://img.shields.io/badge/Arxiv-Available%20soon-red?logo=arxiv&amp"></a>
+    <a href="https://github.com/OpenMOSS/MOSS-VL/blob/main/assets/wechat.jpg"><img src="https://img.shields.io/badge/Wechat-Join-green?logo=wechat&amp"></a>
     <a href="./LICENSE"><img src="https://img.shields.io/badge/License-Apache%202.0-blue.svg" alt="license"></a>
 </div>
 
@@ -140,22 +141,15 @@ MOSS-Video-Preview employs a **three-stage progressive training strategy** to ev
 
 ## 📊 Evaluation Results
 
-| Category | Benchmark | **Our Model** | Llama 3.2 (Base) | Qwen 2.5-VL (32B) | Qwen 2.5-VL (7B) | LLaVA-OV (7B) |
-| :--- | :--- | :---: | :---: | :---: | :---: | :---: |
-| **Video Logic** | **Video-Holmes** | **39.9** 🚀 | - | 38.4 | 33.0 | 33.0 |
-| **Video General** | **VideoMME** | **62.4** | 46.0 | 70.5 | 65.1 | 58.2 |
-| **Spatial Reasoning** | **VSI-Bench** | **31.7** | 20.6 | - | 34.2 | - |
-| **Long Video** | **LongVideoBench** | **54.2** | 45.5 | - | 56.0 | 56.3 |
-| **Video MCQ** | **MVBench** | **55.8** | - | - | 62.8 | 56.7 |
-| **Image Core** | **MMMU (Val)** | **48.6** | 48.0 | 70.0 | 58.6 | 48.8 |
-| **Image Core** | **MMBench (EN)** | **77.3** | 72.8 | - | 82.6 | 80.8 |
-| **Image OCR** | **OCRBench** | **714** | - | - | 845 | - |
-| **Real-world** | **RealWorldQA** | **63.1** | - | - | 68.4 | 66.3 |
+<div align="center">
+  <img src="assets/benchmark.png" alt="Benchmark comparison: MOSS-Video-Preview vs. baselines" width="95%" />
+</div>
 
-MOSS-Video-Preview demonstrates exceptional performance across various video and image benchmarks, particularly excelling in complex temporal reasoning and streaming scenarios:
-- **Superior Video Logic**: Our model achieves **39.9** on **Video-Holmes**, significantly outperforming Qwen 2.5-VL (32B) and other 7B-class models, highlighting its advanced logical reasoning capabilities.
-- **Robust Video Perception**: Scores **62.4** on **VideoMME** and **54.2** on **LongVideoBench**, proving its effectiveness in handling both general and long-duration temporal dependencies.
-- **Balanced Multimodal Foundation**: While optimized for video, it maintains strong image understanding (e.g., **77.3** on **MMBench EN**), ensuring a versatile foundation for diverse tasks.
+- **Performance Consistency in the Real-time Variant**:  Experimental results show that **MOSS-Video-Preview-Realtime-SFT** achieves near-lossless performance retention. Its performance remains highly consistent with the standard SFT version across MMBench, AI2D, and the majority of video benchmarks, even showing superior results in specific temporal understanding tasks like **TempCompass**. This confirms the model's capability to balance real-time response requirements with high-precision perception in real-world deployment scenarios.
+
+- **Visual Logical Reasoning**:  In the Multimodal Reasoning category, the MOSS series demonstrates robust logical deduction performance. Notably, on the **VisuLogic** benchmark, both MOSS variants (28.60 / 28.70) outperform LLaVA-OneVision (27.00) and Qwen2.5-VL (25.90). This reflects the models' superior stability when handling logically challenging tasks such as visual patterns and spatial reasoning.
+
+- **Fine-grained Video Insight**:  The MOSS series shows significant competitive edge in fine-grained action logic and spatio-temporal perception within the video understanding domain. On the **Video-Holmes** benchmark, the MOSS series achieved high scores of **39.30 / 39.50**, while **Qwen2.5-VL** scored **33.00**. These results indicate that MOSS possesses a deeper perceptual capacity for capturing subtle motions and complex spatio-temporal dynamics in long video sequences compared to other open-source models of the same scale.
 
 The core optimization of MOSS-Video-Preview lies in bridging the gap between high-quality reasoning and low-latency real-time streaming, as further evidenced by the speed measurement below.
 
