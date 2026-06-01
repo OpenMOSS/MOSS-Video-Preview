@@ -37,7 +37,7 @@ MOSS-Video-Preview is a multimodal vision foundation model specifically engineer
 *   **🧩 Image-Video Cross-Attention Architecture**: 
     By transcending the limitations of conventional architectures, **MOSS-Video-Preview** leverages a native Cross-Attention mechanism to provide unified image-video understanding. This approach enables deep decoupling of visual and linguistic features, facilitating seamless and continuous analysis of ultra-long temporal sequences.
 
-*   **🔄 Millisecond-Level Interaction & Dynamic Self-Correction**: 
+*   **🔄 Low-Latency Interaction & Dynamic Self-Correction**: 
     The system supports seamless transitions between "Silence" and "Speak" modes. With enhanced contextual awareness, the model allows for real-time interruptions to adjust or refine responses dynamically as video scenes evolve, delivering a truly responsive, full-duplex user experience.
 
 
@@ -74,7 +74,9 @@ MOSS-Video-Preview is a multimodal vision foundation model specifically engineer
 
 
 ## 🏗️ Model Architecture
-Built on a **native Real-Time temporal architecture**, MOSS-Video-Preview **decouples** visual perception and linguistic reasoning to minimize computational latency. This enables **millisecond-level** streaming performance, ensuring a highly responsive and fluid interactive experience for continuous video streams.
+Built on a **native Real-Time temporal architecture**, MOSS-Video-Preview **decouples** visual perception and linguistic reasoning to minimize computational latency. This enables **low-latency** streaming performance, ensuring a highly responsive and fluid interactive experience for continuous video streams.
+
+The language backbone has 40 decoder layers, of which 8 are gated cross-attention layers that retrieve each frame's visual features as keys/values — so visual tokens never enter the autoregressive sequence. The full model is ≈10.7B parameters (referred to as "11B").
 
 <p align="center">
     <img src="./assets/model_structure.png" alt="Model Structure" width="90%"/>
@@ -128,11 +130,11 @@ The core strength of MOSS-Video-Preview lies in its **native real-time streaming
 
 
 ## 📊 Training Stages & Data Composition
-MOSS-Video-Preview employs a **three-stage progressive training strategy** to evolve the model from basic modality alignment to complex real-time video reasoning.
+MOSS-Video-Preview employs a **four-stage progressive training strategy** to evolve the model from basic modality alignment to complex real-time video reasoning.
 
 | Stage | Core Objective | Trainable Parameters | Data Mixture (T / I / V) | Training Samples |
 | :--- | :--- | :--- | :--- | :--- |
-| **PT-Stage 1** | Cross-modal Alignment | **Vision Projector only** | 0% / 79% / 21% | 15.1 M |
+| **PT-Stage 1** | Cross-modal Alignment | **Vision encoder, projector & cross-attn layers** (backbone frozen) | 0% / 79% / 21% | 15.1 M |
 | **PT-Stage 2** | Temporal & Long Video Perception | **Full Parameters** | 0% / 26% / 74% | 1.8 M |
 | **Offline SFT** | Instruction Following & Reasoning | **Full Parameters** | 14% / 44% / 42% | 8.6 M |
 | **Real-Time SFT** | Real-Time understanding and reasoning | **Full Parameters** | 11% / 29% / 60% | 836 K |
@@ -284,7 +286,7 @@ You can choose different configuration files from the `train_config` directory b
 - [x] Streaming Vision Encoder
 - [x] LlamaFactory Training Support
 - [ ] Technical Report
-- [ ] Open-source Moss-VL
+- [x] Open-source Moss-VL
 
 ## Citation
 ```bibtex
@@ -299,7 +301,7 @@ You can choose different configuration files from the `train_config` directory b
 
 ## Contributor Roles
 - **Core Contributor**: Pengyu Wang\*, Chenkun Tan, Shaojun Zhou, Wei Huang, Qirui Zhou, Zhan Huang, Zhen Ye, Jijun Cheng
-- **Contributor**: Xiaomeng Qian, Yanxin Chen, Xingyang He, Huazheng Zeng, Chenghao Wang, Hongkai Wang, Pengfei Wang, Chenghao Liu, Shanqing Gao, Yixian Tian, Xinghao Wang, Botian Jiang, Xipeng Qiu†
+- **Contributor**: Xiaomeng Qian, Yanxin Chen, Xingyang He, Huazheng Zeng, Chenghao Wang, Pengfei Wang, Hongkai Wang, Shanqing Gao, Yixian Tian, Chenghao Liu, Xinghao Wang, Botian Jiang, Xipeng Qiu†
 
 > **Legend**: \* Project Leader; † Corresponding Author
 

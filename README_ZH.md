@@ -40,7 +40,7 @@ MOSS-Video-Preview 是一款专为实时视频理解打造的多模态视觉基�
 - 🧩 **图像-视频 Cross-Attention 架构**：
   打破现有主流架构局限，MOSS-Video-Preview 原生支持图视统一理解。通过 Cross-Attention 机制实现视觉与语言的深度解耦，支持超长时序内容的连续、流畅解析。
 
-- 🔄 **毫秒级实时交互与动态自纠错**：
+- 🔄 **低延迟实时交互与动态自纠错**：
   系统支持在“静默”与“发言”模式之间无缝切换。凭借强大的上下文感知能力，模型允许用户在视频场景演变时进行实时打断，从而动态调整或修正反馈，提供真正具备响应式、全双工特性的交互体验。
 
 
@@ -79,7 +79,9 @@ MOSS-Video-Preview 是一款专为实时视频理解打造的多模态视觉基�
 
  
 ## 🏗️ 模型架构
-MOSS-Video-Preview 基于 **原生实时时序架构** 构建，通过将视觉感知与语言推理**解耦**，极大降低了计算延迟。这使得模型能够实现**毫秒级的流式处理性能**，为连续视频流提供极高响应速度和流畅的交互体验。
+MOSS-Video-Preview 基于 **原生实时时序架构** 构建，通过将视觉感知与语言推理**解耦**，极大降低了计算延迟。这使得模型能够实现**低延迟的流式处理性能**，为连续视频流提供极高响应速度和流畅的交互体验。
+
+语言主干共 40 个解码层，其中 8 层为门控 Cross-Attention 层，负责将每帧的视觉特征作为 key/value 取用——视觉 token 始终不进入自回归序列。整模约 10.7B 参数（通常称「11B」）。
 
 <p align="center">
     <img src="./assets/model_structure.png" alt="Model Structure" width="90%"/>
@@ -132,11 +134,11 @@ MOSS-Video-Preview 的核心优势在于其原生的实时处理架构，能够�
 
 
 ## 📊 训练阶段与数据组成
-MOSS-Video-Preview 采用**三阶段渐进式训练策略**，通过从模态对齐到实时流式任务的演进，构建强大的视频理解能力。
+MOSS-Video-Preview 采用**四阶段渐进式训练策略**，通过从模态对齐到实时流式任务的演进，构建强大的视频理解能力。
 
 | 阶段 | 核心目标 | 可训练参数 | 数据混合 (T / I / V) | 训练样本数 |
 | :--- | :--- | :--- | :--- | :--- |
-| **PT-Stage 1** | 跨模态对齐 | **仅 Vision Projector** | 0% / 79% / 21% | 15.1 M |
+| **PT-Stage 1** | 跨模态对齐 | **Vision 编码器、Projector 与 Cross-Attention 层**（主干冻结） | 0% / 79% / 21% | 15.1 M |
 | **PT-Stage 2** | 时序与长视频感知 | **全参数** | 0% / 26% / 74% | 1.8 M |
 | **Offline SFT** | 指令遵循与推理 | **全参数** | 14% / 44% / 42% | 8.6 M |
 | **Real-Time SFT** | 实时理解与推理 | **全参数** | 11% / 29% / 60% | 836 K |
@@ -292,7 +294,7 @@ FORCE_TORCHRUN=1 llamafactory-cli train train_config/mllm_pretrain_1node.yaml
 - [x] 流式视觉编码器
 - [x] LlamaFactory 训练支持
 - [ ] Technical Report
-- [ ] Open-source Moss-VL
+- [x] Open-source Moss-VL
 
 ## 引用
 ```bibtex
@@ -307,7 +309,7 @@ FORCE_TORCHRUN=1 llamafactory-cli train train_config/mllm_pretrain_1node.yaml
 
 ## 贡献者
 - **核心贡献者**: Pengyu Wang\*, Chenkun Tan, Shaojun Zhou, Wei Huang, Qirui Zhou, Zhan Huang, Zhen Ye, Jijun Cheng
-- **贡献者**: Xiaomeng Qian, Yanxin Chen, Xingyang He, Huazheng Zeng, Chenghao Wang, Hongkai Wang, Pengfei Wang, Chenghao Liu, Shanqing Gao, Yixian Tian, Xinghao Wang, Botian Jiang, Xipeng Qiu†
+- **贡献者**: Xiaomeng Qian, Yanxin Chen, Xingyang He, Huazheng Zeng, Chenghao Wang, Pengfei Wang, Hongkai Wang, Shanqing Gao, Yixian Tian, Chenghao Liu, Xinghao Wang, Botian Jiang, Xipeng Qiu†
 
 > **注**: \* 项目Leader；† 通讯作者
 
