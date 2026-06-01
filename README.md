@@ -65,6 +65,7 @@ MOSS-Video-Preview is a multimodal vision foundation model specifically engineer
 - [Acknowledgement](#acknowledgement)
 
 ## 🔥 News
+- **2026/06/01**: 📦 Open-sourced [Realtime-QA-100K](https://huggingface.co/datasets/OpenMOSS-Team/Realtime-QA-100K) — a 100K-sample real-time video understanding QA dataset!
 - **2026/04/08**: 🎉 [MOSS-VL](https://github.com/OpenMOSS/MOSS-VL) is officially open-sourced! Released MOSS-VL-Base-0408 and MOSS-VL-Instruct-0408. 
 - **2026/03/04**: 🚀 MOSS-Video-Preview source code and architecture details released!
 - **2025/10/18**: 🧭 Post-mortem on current issues; started MOSS-VL project.

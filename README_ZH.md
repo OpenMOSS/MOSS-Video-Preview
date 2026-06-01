@@ -70,6 +70,7 @@ MOSS-Video-Preview 是一款专为实时视频理解打造的多模态视觉基�
 - [致谢](#致谢)
 
 ## 🔥 新闻
+- **2026/06/01**: 📦 开源全新实时视频理解数据集 [Realtime-QA-100K](https://huggingface.co/datasets/OpenMOSS-Team/Realtime-QA-100K)（10 万条实时视频问答样本）！
 - **2026/04/08**: 🎉 [MOSS-VL](https://github.com/OpenMOSS/MOSS-VL) 正式开源！发布了 MOSS-VL-Base-0408 和 MOSS-VL-Instruct-0408。
 - **2026/03/04**: 🚀 MOSS-Video-Preview 源代码和架构细节发布！
 - **2025/10/18**: 🧭 对当前问题进行复盘，并启动 MOSS-VL 项目。
