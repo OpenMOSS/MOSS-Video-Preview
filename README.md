@@ -11,7 +11,7 @@
 <div align="center">
     <a href="#"><img src="https://img.shields.io/badge/AI%20Studio-Available%20soon-blue" alt="AI Studio"></a>
     <a href="#"><img src="https://img.shields.io/badge/Python-3.12+-orange" alt="version"></a>
-    <a href="#"><img src="https://img.shields.io/badge/Arxiv-Available%20soon-red?logo=arxiv&amp"></a>
+    <a href="https://arxiv.org/abs/2606.07639"><img src="https://img.shields.io/badge/Arxiv-2606.07639-red?logo=arxiv&amp"></a>
     <a href="https://github.com/OpenMOSS/MOSS-VL/blob/main/assets/wechat.jpg"><img src="https://img.shields.io/badge/Wechat-Join-green?logo=wechat&amp"></a>
     <a href="./LICENSE"><img src="https://img.shields.io/badge/License-Apache%202.0-blue.svg" alt="license"></a>
 </div>
@@ -21,7 +21,7 @@
 </p>
 
 
-## MOSS-Video-Preview: Next-Generation Real-Time Video Understanding
+## MOSS-Video-Preview: Toward Real-Time Video Understanding via Cross-Attention
 MOSS-Video-Preview is a multimodal vision foundation model specifically engineered for real-time video understanding. Built upon the Llama-3.2-Vision architecture, we have comprehensively extended the model's native video processing capabilities, empowering it with state-of-the-art real-time multimodal reasoning performance.
 
 > [!IMPORTANT]
@@ -65,6 +65,7 @@ MOSS-Video-Preview is a multimodal vision foundation model specifically engineer
 - [Acknowledgement](#acknowledgement)
 
 ## 🔥 News
+- **2026/06/01**: 📄 Our technical report is now available on arXiv — [MOSS-Video-Preview: Toward Real-Time Video Understanding via Cross-Attention](https://arxiv.org/abs/2606.07639)!
 - **2026/06/01**: 📦 Open-sourced [Realtime-QA-100K](https://huggingface.co/datasets/OpenMOSS-Team/Realtime-QA-100K) — a 100K-sample real-time video understanding QA dataset!
 - **2026/04/08**: 🎉 [MOSS-VL](https://github.com/OpenMOSS/MOSS-VL) is officially open-sourced! Released MOSS-VL-Base-0408 and MOSS-VL-Instruct-0408. 
 - **2026/03/04**: 🚀 MOSS-Video-Preview source code and architecture details released!
@@ -286,17 +287,19 @@ You can choose different configuration files from the `train_config` directory b
 - [x] NPU/CUDA Flash Attention 2 Integration
 - [x] Streaming Vision Encoder
 - [x] LlamaFactory Training Support
-- [ ] Technical Report
+- [x] Technical Report
 - [x] Open-source Moss-VL
 
 ## Citation
 ```bibtex
-@misc{moss_video_2026,
-  title         = {{MOSS-Video-Preview: Next-Generation Real-Time Video Understanding}},
-  author        = {OpenMOSS Team},
+@misc{wang2026mossvideopreview,
+  title         = {{MOSS-Video-Preview: Toward Real-Time Video Understanding via Cross-Attention}},
+  author        = {Pengyu Wang and Chenkun Tan and Shaojun Zhou and Wei Huang and Qirui Zhou and Zhan Huang and Zhen Ye and Jijun Cheng and Xiaomeng Qian and Yanxin Chen and Xingyang He and Huazheng Zeng and Chenghao Wang and Pengfei Wang and Hongkai Wang and Shanqing Gao and Yixian Tian and Chenghao Liu and Xinghao Wang and Botian Jiang and Xipeng Qiu},
   year          = {2026},
-  howpublished  = {\url{https://github.com/OpenMOSS/MOSS-Video-Preview}},
-  note          = {GitHub repository}
+  eprint        = {2606.07639},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.CV},
+  url           = {https://arxiv.org/abs/2606.07639}
 }
 ```
 

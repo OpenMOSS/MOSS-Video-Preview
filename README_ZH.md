@@ -11,7 +11,7 @@
 <div align="center">
     <a href="#"><img src="https://img.shields.io/badge/AI%20Studio-Available%20soon-blue" alt="AI Studio"></a>
     <a href="#"><img src="https://img.shields.io/badge/Python-3.12+-orange" alt="version"></a>
-    <a href="#"><img src="https://img.shields.io/badge/Arxiv-Available%20soon-red?logo=arxiv&amp"></a>
+    <a href="https://arxiv.org/abs/2606.07639"><img src="https://img.shields.io/badge/Arxiv-2606.07639-red?logo=arxiv&amp"></a>
     <a href="https://github.com/OpenMOSS/MOSS-VL/blob/main/assets/wechat.jpg"><img src="https://img.shields.io/badge/Wechat-Join-green?logo=wechat&amp"></a>
 
     <a href="./LICENSE"><img src="https://img.shields.io/badge/License-Apache%202.0-blue.svg" alt="license"></a>
@@ -22,7 +22,7 @@
 </p>
 
 
-## MOSS-Video-Preview: 下一代实时视频理解
+## MOSS-Video-Preview: 迈向基于 Cross-Attention 的实时视频理解
 
 MOSS-Video-Preview 是一款专为实时视频理解打造的多模态视觉基础模型。基于 Llama-3.2-Vision 架构，我们全面提升了模型原生处理视频的能力，使其具备了卓越的实时多模态推理表现。
 
@@ -70,6 +70,7 @@ MOSS-Video-Preview 是一款专为实时视频理解打造的多模态视觉基�
 - [致谢](#致谢)
 
 ## 🔥 新闻
+- **2026/06/01**: 📄 技术报告已发布至 arXiv——[MOSS-Video-Preview: Toward Real-Time Video Understanding via Cross-Attention](https://arxiv.org/abs/2606.07639)！
 - **2026/06/01**: 📦 开源全新实时视频理解数据集 [Realtime-QA-100K](https://huggingface.co/datasets/OpenMOSS-Team/Realtime-QA-100K)（10 万条实时视频问答样本）！
 - **2026/04/08**: 🎉 [MOSS-VL](https://github.com/OpenMOSS/MOSS-VL) 正式开源！发布了 MOSS-VL-Base-0408 和 MOSS-VL-Instruct-0408。
 - **2026/03/04**: 🚀 MOSS-Video-Preview 源代码和架构细节发布！
@@ -294,17 +295,19 @@ FORCE_TORCHRUN=1 llamafactory-cli train train_config/mllm_pretrain_1node.yaml
 - [x] NPU/CUDA Flash Attention 2 集成
 - [x] 流式视觉编码器
 - [x] LlamaFactory 训练支持
-- [ ] Technical Report
+- [x] Technical Report
 - [x] Open-source Moss-VL
 
 ## 引用
 ```bibtex
-@misc{moss_video_2026,
-  title         = {{MOSS-Video-Preview: Next-Generation Real-Time Video Understanding}},
-  author        = {OpenMOSS Team},
+@misc{wang2026mossvideopreview,
+  title         = {{MOSS-Video-Preview: Toward Real-Time Video Understanding via Cross-Attention}},
+  author        = {Pengyu Wang and Chenkun Tan and Shaojun Zhou and Wei Huang and Qirui Zhou and Zhan Huang and Zhen Ye and Jijun Cheng and Xiaomeng Qian and Yanxin Chen and Xingyang He and Huazheng Zeng and Chenghao Wang and Pengfei Wang and Hongkai Wang and Shanqing Gao and Yixian Tian and Chenghao Liu and Xinghao Wang and Botian Jiang and Xipeng Qiu},
   year          = {2026},
-  howpublished  = {\url{https://github.com/OpenMOSS/MOSS-Video-Preview}},
-  note          = {GitHub repository}
+  eprint        = {2606.07639},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.CV},
+  url           = {https://arxiv.org/abs/2606.07639}
 }
 ```
 
