@@ -12,7 +12,7 @@
     <a href="#"><img src="https://img.shields.io/badge/AI%20Studio-Available%20soon-blue" alt="AI Studio"></a>
     <a href="#"><img src="https://img.shields.io/badge/Python-3.12+-orange" alt="version"></a>
     <a href="https://arxiv.org/abs/2606.07639"><img src="https://img.shields.io/badge/Arxiv-2606.07639-red?logo=arxiv&amp"></a>
-    <a href="https://github.com/OpenMOSS/MOSS-VL/blob/main/assets/wechat.jpg"><img src="https://img.shields.io/badge/Wechat-Join-green?logo=wechat&amp"></a>
+    <a href="https://github.com/OpenMOSS/MOSS-VL/blob/main/assets/feishu.jpg"><img src="./assets/feishu-badge.svg" alt="Feishu: Join"></a>
     <a href="./LICENSE"><img src="https://img.shields.io/badge/License-Apache%202.0-blue.svg" alt="license"></a>
 </div>
 
