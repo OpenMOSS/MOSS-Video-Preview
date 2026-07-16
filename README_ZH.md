@@ -321,10 +321,12 @@ FORCE_TORCHRUN=1 llamafactory-cli train train_config/mllm_pretrain_1node.yaml
 
 ## Star History
 
+## Star History
+
 <a href="https://www.star-history.com/?repos=OpenMOSS%2FMOSS-Video-Preview&type=date&legend=top-left">
  <picture>
-   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/chart?repos=OpenMOSS/MOSS-Video-Preview&type=date&theme=dark&legend=top-left" />
-   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/chart?repos=OpenMOSS/MOSS-Video-Preview&type=date&legend=top-left" />
-   <img alt="Star History Chart" src="https://api.star-history.com/chart?repos=OpenMOSS/MOSS-Video-Preview&type=date&legend=top-left" />
+   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/chart?repos=OpenMOSS/MOSS-Video-Preview&type=date&theme=dark&legend=top-left&sealed_token=5iYhrqWL7fivr5235ye5KRCdqbtwC3CWC1-MbBkfk2E7MgsN4vqNMhgMviK6_uFB6Cn1v5ZXgaOQ5IfeMM0HSPkVrDs94KEudKKD7S74S1V_OFy41g6B8Q" />
+   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/chart?repos=OpenMOSS/MOSS-Video-Preview&type=date&legend=top-left&sealed_token=5iYhrqWL7fivr5235ye5KRCdqbtwC3CWC1-MbBkfk2E7MgsN4vqNMhgMviK6_uFB6Cn1v5ZXgaOQ5IfeMM0HSPkVrDs94KEudKKD7S74S1V_OFy41g6B8Q" />
+   <img alt="Star History Chart" src="https://api.star-history.com/chart?repos=OpenMOSS/MOSS-Video-Preview&type=date&legend=top-left&sealed_token=5iYhrqWL7fivr5235ye5KRCdqbtwC3CWC1-MbBkfk2E7MgsN4vqNMhgMviK6_uFB6Cn1v5ZXgaOQ5IfeMM0HSPkVrDs94KEudKKD7S74S1V_OFy41g6B8Q" />
  </picture>
 </a>
